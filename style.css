@@ -1,0 +1,107 @@
+
+body {
+    display: grid;
+    grid-template-areas:
+        "cima cima"
+        "babo alto"
+        "baixo baixo";
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 0px;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+aside, main, footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+header { background-color: rgb(0, 183, 255); grid-area: cima; }
+aside { background-color: rgb(217, 255, 0); grid-area: babo; }
+main { background-color: rgb(43, 226, 186); grid-area: alto; }
+footer { background-color: rgb(141, 226, 43); grid-area: baixo; }
+
+
+.mae {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    justify-items: center;                 
+    gap: 15px;
+    width: 100%;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid yellow;
+    border-radius: 30px;
+    background-color: green;
+    width: 350px;     
+}
+
+
+.imagem_produto {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+.botao_produto {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: yellow;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    width: 80%;
+}
+
+
+@media (max-width: 1024px) {
+body{ 
+    grid-template-areas:
+            "cima"
+            "babo"
+            "alto"
+            "baixo";
+        grid-template-columns: 1fr;
+}
+        .mae {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .card {
+        width: 140px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    body {
+        grid-template-areas:
+            "cima"
+            "alto"
+            "baixo";
+        grid-template-columns: 1fr;
+    }
+    .mae {
+        grid-template-columns: 1fr; 
+    }
+    .card {
+        width: 90%;
+    }
+
+    aside {
+        display: none;
+    }
+}
